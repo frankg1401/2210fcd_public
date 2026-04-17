@@ -1,0 +1,17 @@
+
+===== INFERENCE RESULTS =====
+Threshold used: 0.344482421875
+Accuracy: 0.7647058823529411
+Precision: 0.8
+Recall: 0.7058823529411765
+F1 Score: 0.75
+AUC: 0.7958477508650519
+TP: 12
+TN: 14
+FP: 3
+FN: 5
+
+===== INFERENCE EFFICIENCY =====
+Avg latency per sample: 0.049756504595279694
+Throughput: 20.09787480318439
+Peak GPU memory (inference): 5.430838108062744
