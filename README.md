@@ -22,3 +22,9 @@ in computational cost. Late fusion achieved competitive performance in some conf
 runtime and memory cost. In the full-resolution FP32 setting, standard late fusion was infeasible at batch size 2 due to
 out-of-memory failure; a memory-optimized version restored feasibility but remained expensive. Overall, early fusion
 with AMP at full resolution provided the best practical operating point on a single L40S GPU.
+
+ACKNOWLEGEMENT AND NEW CONTRIBUTION
+
+This work builds upon a baseline implementation developed by Daniel Rafique at the Intelligent Medical Informatics Computing Systems (IMICS) Lab at the Hospital for Sick Children and the University of Toronto, which includes MRI image pre-processing and a baseline early-fusion two-channel (T1 + FLAIR) 3D ResNet model. 
+
+For this project, I significantly extended the baseline with a focus on hardware-aware optimization and performance analysis. I developed a flexible experimental framework supporting multiple model configurations, including single-modality models (T1-only and FLAIR-only), standard late fusion, and a memory-optimized late fusion architecture that incorporates activation checkpointing and selective layer freezing to reduce GPU memory usage. In addition, I introduced configurable system-level optimizations such as mixed precision training (AMP vs FP32), variable input resolutions, and batch size scaling, enabling systematic evaluation of accuracy–efficiency trade-offs under constrained hardware settings. I implemented enhanced checkpointing strategies, evaluation through dynamic threshold selection using Youden’s J statistic, as well as detailed runtime profiling, including measurement of training/validation time, data loading vs compute time, peak GPU memory usage, and inference latency, allowing for comprehensive characterization of system performance. Finally, I conducted experiments, analyzed results, and wrote the report.
