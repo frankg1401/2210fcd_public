@@ -1,0 +1,302 @@
+============================================================
+START: Sun Apr 12 23:30:03 EDT 2026
+NAME : 05_lateopt_t1flair_fp32_full_bs2
+CMD  : python 2210.py --fusion late_opt --modalities t1_flair --dtype fp32 --input_size full --batch_size 2 --use_checkpoint --freeze_until none
+PWD  : /workspace/project
+------------------------------------------------------------
+nvidia-smi BEFORE RUN
+Mon Apr 13 03:30:03 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.127.05             Driver Version: 550.127.05     CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA L40S                    On  |   00000000:64:00.0 Off |                    0 |
+| N/A   29C    P0             78W /  350W |     431MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
++-----------------------------------------------------------------------------------------+
+------------------------------------------------------------
+
+New experiment using device: cuda
+Experiment config: {'fusion': 'late_opt', 'modalities': 't1_flair', 'dtype': 'fp32', 'input_size': 'full', 'epochs': 60, 'batch_size': 2, 'use_checkpoint': True, 'freeze_until': 'none'}
+Train: 102, Val: 34, Test: 34
+Total params: 66,038,145
+Trainable params: 66,038,145
+Timestamp: 20260412_233345 | Epoch 1/60 | Train Loss: 0.7110 | Train Acc: 0.5490 | Val Loss: 0.6363 | Val Acc: 0.7353 | Precision: 0.7222 | Recall: 0.7647 | F1: 0.7429 | AUC: 0.7820 | Best Thresh: 0.4052 | J: 0.4706
+Train Time: 86.12s | Val Time: 9.25s | Total: 95.36s
+Initial BEST LOSS model saved at epoch 1
+   Val Loss: 0.6363 | Threshold: 0.4052
+Initial BEST AUC model saved at epoch 1
+   Val AUC: 0.7820 | Threshold: 0.4052
+Timestamp: 20260412_233518 | Epoch 2/60 | Train Loss: 0.6614 | Train Acc: 0.5980 | Val Loss: 0.5284 | Val Acc: 0.7941 | Precision: 0.9167 | Recall: 0.6471 | F1: 0.7586 | AUC: 0.8131 | Best Thresh: 0.5858 | J: 0.5882
+Train Time: 84.56s | Val Time: 8.91s | Total: 93.47s
+Best LOSS model updated at epoch 2
+   Val Loss: 0.5284 | Threshold: 0.5858
+Best AUC model updated at epoch 2
+   Val AUC: 0.8131 | Threshold: 0.5858
+Timestamp: 20260412_233651 | Epoch 3/60 | Train Loss: 0.6458 | Train Acc: 0.6373 | Val Loss: 0.5419 | Val Acc: 0.7941 | Precision: 0.7778 | Recall: 0.8235 | F1: 0.8000 | AUC: 0.8720 | Best Thresh: 0.2390 | J: 0.5882
+Train Time: 83.46s | Val Time: 8.46s | Total: 91.92s
+Best AUC model updated at epoch 3
+   Val AUC: 0.8720 | Threshold: 0.2390
+Timestamp: 20260412_233823 | Epoch 4/60 | Train Loss: 0.5894 | Train Acc: 0.7255 | Val Loss: 0.9255 | Val Acc: 0.7647 | Precision: 0.9091 | Recall: 0.5882 | F1: 0.7143 | AUC: 0.8062 | Best Thresh: 0.9465 | J: 0.5294
+Train Time: 82.97s | Val Time: 9.04s | Total: 92.01s
+Timestamp: 20260412_233955 | Epoch 5/60 | Train Loss: 0.6209 | Train Acc: 0.6176 | Val Loss: 0.6495 | Val Acc: 0.7059 | Precision: 0.7059 | Recall: 0.7059 | F1: 0.7059 | AUC: 0.6955 | Best Thresh: 0.5472 | J: 0.4118
+Train Time: 83.68s | Val Time: 8.64s | Total: 92.32s
+Timestamp: 20260412_234127 | Epoch 6/60 | Train Loss: 0.6212 | Train Acc: 0.6373 | Val Loss: 0.6294 | Val Acc: 0.7647 | Precision: 0.7647 | Recall: 0.7647 | F1: 0.7647 | AUC: 0.7889 | Best Thresh: 0.6842 | J: 0.5294
+Train Time: 83.31s | Val Time: 8.86s | Total: 92.17s
+Timestamp: 20260412_234300 | Epoch 7/60 | Train Loss: 0.6230 | Train Acc: 0.6569 | Val Loss: 0.6091 | Val Acc: 0.7647 | Precision: 1.0000 | Recall: 0.5294 | F1: 0.6923 | AUC: 0.8235 | Best Thresh: 0.9251 | J: 0.5294
+Train Time: 83.98s | Val Time: 8.65s | Total: 92.63s
+Timestamp: 20260412_234431 | Epoch 8/60 | Train Loss: 0.6056 | Train Acc: 0.6863 | Val Loss: 0.5393 | Val Acc: 0.7647 | Precision: 0.8000 | Recall: 0.7059 | F1: 0.7500 | AUC: 0.8131 | Best Thresh: 0.3558 | J: 0.5294
+Train Time: 82.55s | Val Time: 8.74s | Total: 91.29s
+Timestamp: 20260412_234603 | Epoch 9/60 | Train Loss: 0.5776 | Train Acc: 0.6863 | Val Loss: 0.4886 | Val Acc: 0.7941 | Precision: 1.0000 | Recall: 0.5882 | F1: 0.7407 | AUC: 0.8304 | Best Thresh: 0.7593 | J: 0.5882
+Train Time: 82.76s | Val Time: 8.65s | Total: 91.41s
+Best LOSS model updated at epoch 9
+   Val Loss: 0.4886 | Threshold: 0.7593
+Timestamp: 20260412_234735 | Epoch 10/60 | Train Loss: 0.6537 | Train Acc: 0.6078 | Val Loss: 0.5418 | Val Acc: 0.8235 | Precision: 1.0000 | Recall: 0.6471 | F1: 0.7857 | AUC: 0.7474 | Best Thresh: 0.5108 | J: 0.6471
+Train Time: 82.86s | Val Time: 9.07s | Total: 91.92s
+Timestamp: 20260412_234907 | Epoch 11/60 | Train Loss: 0.6119 | Train Acc: 0.6176 | Val Loss: 0.5123 | Val Acc: 0.8235 | Precision: 1.0000 | Recall: 0.6471 | F1: 0.7857 | AUC: 0.7924 | Best Thresh: 0.3880 | J: 0.6471
+Train Time: 82.95s | Val Time: 8.95s | Total: 91.90s
+Timestamp: 20260412_235038 | Epoch 12/60 | Train Loss: 0.5720 | Train Acc: 0.6471 | Val Loss: 0.4817 | Val Acc: 0.7941 | Precision: 1.0000 | Recall: 0.5882 | F1: 0.7407 | AUC: 0.8097 | Best Thresh: 0.6956 | J: 0.5882
+Train Time: 82.64s | Val Time: 8.76s | Total: 91.40s
+Best LOSS model updated at epoch 12
+   Val Loss: 0.4817 | Threshold: 0.6956
+Timestamp: 20260412_235210 | Epoch 13/60 | Train Loss: 0.5671 | Train Acc: 0.6863 | Val Loss: 0.4920 | Val Acc: 0.7647 | Precision: 1.0000 | Recall: 0.5294 | F1: 0.6923 | AUC: 0.7958 | Best Thresh: 0.5761 | J: 0.5294
+Train Time: 82.98s | Val Time: 9.04s | Total: 92.03s
+Timestamp: 20260412_235342 | Epoch 14/60 | Train Loss: 0.5609 | Train Acc: 0.7059 | Val Loss: 0.4793 | Val Acc: 0.7941 | Precision: 1.0000 | Recall: 0.5882 | F1: 0.7407 | AUC: 0.7993 | Best Thresh: 0.6436 | J: 0.5882
+Train Time: 82.75s | Val Time: 8.85s | Total: 91.60s
+Best LOSS model updated at epoch 14
+   Val Loss: 0.4793 | Threshold: 0.6436
+Timestamp: 20260412_235512 | Epoch 15/60 | Train Loss: 0.5907 | Train Acc: 0.6667 | Val Loss: 0.4996 | Val Acc: 0.7941 | Precision: 1.0000 | Recall: 0.5882 | F1: 0.7407 | AUC: 0.7993 | Best Thresh: 0.8546 | J: 0.5882
+Train Time: 81.68s | Val Time: 8.44s | Total: 90.12s
+Timestamp: 20260412_235644 | Epoch 16/60 | Train Loss: 0.5553 | Train Acc: 0.7451 | Val Loss: 0.4439 | Val Acc: 0.8529 | Precision: 1.0000 | Recall: 0.7059 | F1: 0.8276 | AUC: 0.8062 | Best Thresh: 0.5075 | J: 0.7059
+Train Time: 82.67s | Val Time: 8.74s | Total: 91.41s
+Best LOSS model updated at epoch 16
+   Val Loss: 0.4439 | Threshold: 0.5075
+Timestamp: 20260412_235815 | Epoch 17/60 | Train Loss: 0.5680 | Train Acc: 0.6961 | Val Loss: 0.4576 | Val Acc: 0.8529 | Precision: 1.0000 | Recall: 0.7059 | F1: 0.8276 | AUC: 0.8304 | Best Thresh: 0.6519 | J: 0.7059
+Train Time: 82.48s | Val Time: 8.45s | Total: 90.93s
+Timestamp: 20260412_235946 | Epoch 18/60 | Train Loss: 0.5686 | Train Acc: 0.6961 | Val Loss: 0.4915 | Val Acc: 0.7941 | Precision: 1.0000 | Recall: 0.5882 | F1: 0.7407 | AUC: 0.7751 | Best Thresh: 0.5439 | J: 0.5882
+Train Time: 82.45s | Val Time: 8.95s | Total: 91.40s
+Timestamp: 20260413_000118 | Epoch 19/60 | Train Loss: 0.5427 | Train Acc: 0.7157 | Val Loss: 0.4599 | Val Acc: 0.7941 | Precision: 0.8571 | Recall: 0.7059 | F1: 0.7742 | AUC: 0.8547 | Best Thresh: 0.4064 | J: 0.5882
+Train Time: 82.55s | Val Time: 8.85s | Total: 91.40s
+Timestamp: 20260413_000249 | Epoch 20/60 | Train Loss: 0.5378 | Train Acc: 0.7059 | Val Loss: 0.4752 | Val Acc: 0.8529 | Precision: 1.0000 | Recall: 0.7059 | F1: 0.8276 | AUC: 0.8270 | Best Thresh: 0.3829 | J: 0.7059
+Train Time: 82.55s | Val Time: 8.95s | Total: 91.50s
+Timestamp: 20260413_000420 | Epoch 21/60 | Train Loss: 0.4695 | Train Acc: 0.7647 | Val Loss: 0.4278 | Val Acc: 0.8235 | Precision: 1.0000 | Recall: 0.6471 | F1: 0.7857 | AUC: 0.8374 | Best Thresh: 0.6580 | J: 0.6471
+Train Time: 82.55s | Val Time: 8.83s | Total: 91.38s
+Best LOSS model updated at epoch 21
+   Val Loss: 0.4278 | Threshold: 0.6580
+Timestamp: 20260413_000552 | Epoch 22/60 | Train Loss: 0.5172 | Train Acc: 0.7745 | Val Loss: 0.4084 | Val Acc: 0.8235 | Precision: 1.0000 | Recall: 0.6471 | F1: 0.7857 | AUC: 0.8720 | Best Thresh: 0.7772 | J: 0.6471
+Train Time: 82.70s | Val Time: 8.44s | Total: 91.14s
+Best LOSS model updated at epoch 22
+   Val Loss: 0.4084 | Threshold: 0.7772
+Timestamp: 20260413_000724 | Epoch 23/60 | Train Loss: 0.5464 | Train Acc: 0.7353 | Val Loss: 0.4331 | Val Acc: 0.8529 | Precision: 1.0000 | Recall: 0.7059 | F1: 0.8276 | AUC: 0.8374 | Best Thresh: 0.4350 | J: 0.7059
+Train Time: 83.86s | Val Time: 8.47s | Total: 92.33s
+Timestamp: 20260413_000856 | Epoch 24/60 | Train Loss: 0.4778 | Train Acc: 0.7549 | Val Loss: 0.5226 | Val Acc: 0.8529 | Precision: 1.0000 | Recall: 0.7059 | F1: 0.8276 | AUC: 0.8270 | Best Thresh: 0.3056 | J: 0.7059
+Train Time: 82.35s | Val Time: 8.95s | Total: 91.29s
+Timestamp: 20260413_001027 | Epoch 25/60 | Train Loss: 0.4871 | Train Acc: 0.7549 | Val Loss: 0.4415 | Val Acc: 0.8235 | Precision: 1.0000 | Recall: 0.6471 | F1: 0.7857 | AUC: 0.8512 | Best Thresh: 0.5465 | J: 0.6471
+Train Time: 82.75s | Val Time: 9.05s | Total: 91.80s
+Timestamp: 20260413_001159 | Epoch 26/60 | Train Loss: 0.5197 | Train Acc: 0.7353 | Val Loss: 0.4177 | Val Acc: 0.8529 | Precision: 1.0000 | Recall: 0.7059 | F1: 0.8276 | AUC: 0.8339 | Best Thresh: 0.4686 | J: 0.7059
+Train Time: 83.06s | Val Time: 9.05s | Total: 92.10s
+Timestamp: 20260413_001331 | Epoch 27/60 | Train Loss: 0.5082 | Train Acc: 0.7745 | Val Loss: 0.4973 | Val Acc: 0.8529 | Precision: 1.0000 | Recall: 0.7059 | F1: 0.8276 | AUC: 0.8478 | Best Thresh: 0.3311 | J: 0.7059
+Train Time: 82.85s | Val Time: 8.84s | Total: 91.68s
+Timestamp: 20260413_001504 | Epoch 28/60 | Train Loss: 0.5008 | Train Acc: 0.7451 | Val Loss: 0.4163 | Val Acc: 0.8529 | Precision: 1.0000 | Recall: 0.7059 | F1: 0.8276 | AUC: 0.8616 | Best Thresh: 0.4209 | J: 0.7059
+Train Time: 83.63s | Val Time: 8.85s | Total: 92.48s
+Timestamp: 20260413_001636 | Epoch 29/60 | Train Loss: 0.5155 | Train Acc: 0.7451 | Val Loss: 0.4775 | Val Acc: 0.8529 | Precision: 1.0000 | Recall: 0.7059 | F1: 0.8276 | AUC: 0.8651 | Best Thresh: 0.3209 | J: 0.7059
+Train Time: 83.26s | Val Time: 9.17s | Total: 92.43s
+Timestamp: 20260413_001807 | Epoch 30/60 | Train Loss: 0.4743 | Train Acc: 0.7745 | Val Loss: 0.5092 | Val Acc: 0.8235 | Precision: 1.0000 | Recall: 0.6471 | F1: 0.7857 | AUC: 0.8408 | Best Thresh: 0.3268 | J: 0.6471
+Train Time: 82.55s | Val Time: 8.84s | Total: 91.38s
+Timestamp: 20260413_001939 | Epoch 31/60 | Train Loss: 0.5089 | Train Acc: 0.7353 | Val Loss: 0.4055 | Val Acc: 0.8529 | Precision: 1.0000 | Recall: 0.7059 | F1: 0.8276 | AUC: 0.8858 | Best Thresh: 0.5062 | J: 0.7059
+Train Time: 82.57s | Val Time: 8.94s | Total: 91.51s
+Best LOSS model updated at epoch 31
+   Val Loss: 0.4055 | Threshold: 0.5062
+Best AUC model updated at epoch 31
+   Val AUC: 0.8858 | Threshold: 0.5062
+Timestamp: 20260413_002111 | Epoch 32/60 | Train Loss: 0.4629 | Train Acc: 0.7843 | Val Loss: 0.4389 | Val Acc: 0.8529 | Precision: 1.0000 | Recall: 0.7059 | F1: 0.8276 | AUC: 0.8824 | Best Thresh: 0.3624 | J: 0.7059
+Train Time: 83.01s | Val Time: 8.45s | Total: 91.46s
+Timestamp: 20260413_002242 | Epoch 33/60 | Train Loss: 0.4429 | Train Acc: 0.7843 | Val Loss: 0.4345 | Val Acc: 0.8235 | Precision: 1.0000 | Recall: 0.6471 | F1: 0.7857 | AUC: 0.8927 | Best Thresh: 0.4769 | J: 0.6471
+Train Time: 82.56s | Val Time: 8.84s | Total: 91.40s
+Best AUC model updated at epoch 33
+   Val AUC: 0.8927 | Threshold: 0.4769
+Timestamp: 20260413_002413 | Epoch 34/60 | Train Loss: 0.4662 | Train Acc: 0.7843 | Val Loss: 0.4399 | Val Acc: 0.8529 | Precision: 0.8000 | Recall: 0.9412 | F1: 0.8649 | AUC: 0.9066 | Best Thresh: 0.2613 | J: 0.7059
+Train Time: 82.27s | Val Time: 8.64s | Total: 90.91s
+Best AUC model updated at epoch 34
+   Val AUC: 0.9066 | Threshold: 0.2613
+Timestamp: 20260413_002545 | Epoch 35/60 | Train Loss: 0.4526 | Train Acc: 0.8039 | Val Loss: 0.4420 | Val Acc: 0.8529 | Precision: 1.0000 | Recall: 0.7059 | F1: 0.8276 | AUC: 0.8651 | Best Thresh: 0.3896 | J: 0.7059
+Train Time: 82.47s | Val Time: 8.95s | Total: 91.42s
+Timestamp: 20260413_002716 | Epoch 36/60 | Train Loss: 0.4774 | Train Acc: 0.7941 | Val Loss: 0.4722 | Val Acc: 0.8529 | Precision: 1.0000 | Recall: 0.7059 | F1: 0.8276 | AUC: 0.8651 | Best Thresh: 0.3109 | J: 0.7059
+Train Time: 82.26s | Val Time: 8.44s | Total: 90.70s
+Timestamp: 20260413_002848 | Epoch 37/60 | Train Loss: 0.4952 | Train Acc: 0.7549 | Val Loss: 0.3861 | Val Acc: 0.8529 | Precision: 1.0000 | Recall: 0.7059 | F1: 0.8276 | AUC: 0.8962 | Best Thresh: 0.5906 | J: 0.7059
+Train Time: 83.79s | Val Time: 8.60s | Total: 92.40s
+Best LOSS model updated at epoch 37
+   Val Loss: 0.3861 | Threshold: 0.5906
+Timestamp: 20260413_003020 | Epoch 38/60 | Train Loss: 0.4741 | Train Acc: 0.7745 | Val Loss: 0.4976 | Val Acc: 0.8529 | Precision: 1.0000 | Recall: 0.7059 | F1: 0.8276 | AUC: 0.8754 | Best Thresh: 0.2934 | J: 0.7059
+Train Time: 82.88s | Val Time: 8.63s | Total: 91.51s
+Timestamp: 20260413_003151 | Epoch 39/60 | Train Loss: 0.3883 | Train Acc: 0.8824 | Val Loss: 0.3969 | Val Acc: 0.8529 | Precision: 1.0000 | Recall: 0.7059 | F1: 0.8276 | AUC: 0.8893 | Best Thresh: 0.6061 | J: 0.7059
+Train Time: 82.57s | Val Time: 8.65s | Total: 91.22s
+Timestamp: 20260413_003323 | Epoch 40/60 | Train Loss: 0.4710 | Train Acc: 0.7843 | Val Loss: 0.3928 | Val Acc: 0.8824 | Precision: 0.9333 | Recall: 0.8235 | F1: 0.8750 | AUC: 0.9135 | Best Thresh: 0.3248 | J: 0.7647
+Train Time: 83.45s | Val Time: 8.92s | Total: 92.38s
+Best AUC model updated at epoch 40
+   Val AUC: 0.9135 | Threshold: 0.3248
+Timestamp: 20260413_003456 | Epoch 41/60 | Train Loss: 0.3867 | Train Acc: 0.8333 | Val Loss: 0.4728 | Val Acc: 0.8824 | Precision: 1.0000 | Recall: 0.7647 | F1: 0.8667 | AUC: 0.8997 | Best Thresh: 0.3032 | J: 0.7647
+Train Time: 83.40s | Val Time: 9.24s | Total: 92.64s
+Timestamp: 20260413_003628 | Epoch 42/60 | Train Loss: 0.3982 | Train Acc: 0.8431 | Val Loss: 0.4650 | Val Acc: 0.8824 | Precision: 1.0000 | Recall: 0.7647 | F1: 0.8667 | AUC: 0.8962 | Best Thresh: 0.2876 | J: 0.7647
+Train Time: 83.26s | Val Time: 8.75s | Total: 92.01s
+Timestamp: 20260413_003800 | Epoch 43/60 | Train Loss: 0.3895 | Train Acc: 0.8529 | Val Loss: 0.4111 | Val Acc: 0.8529 | Precision: 1.0000 | Recall: 0.7059 | F1: 0.8276 | AUC: 0.8789 | Best Thresh: 0.3370 | J: 0.7059
+Train Time: 82.65s | Val Time: 9.15s | Total: 91.80s
+Timestamp: 20260413_003932 | Epoch 44/60 | Train Loss: 0.3995 | Train Acc: 0.8529 | Val Loss: 0.4511 | Val Acc: 0.8529 | Precision: 0.9286 | Recall: 0.7647 | F1: 0.8387 | AUC: 0.8824 | Best Thresh: 0.2875 | J: 0.7059
+Train Time: 83.35s | Val Time: 8.75s | Total: 92.10s
+Timestamp: 20260413_004104 | Epoch 45/60 | Train Loss: 0.4301 | Train Acc: 0.8137 | Val Loss: 0.4373 | Val Acc: 0.8824 | Precision: 1.0000 | Recall: 0.7647 | F1: 0.8667 | AUC: 0.8927 | Best Thresh: 0.3015 | J: 0.7647
+Train Time: 83.55s | Val Time: 8.92s | Total: 92.47s
+Scheduled checkpoint saved at epoch 45
+   Path: /workspace/models/late_opt_t1_flair_fp32_full_bs2_60_ckpt1_freezenone_20260412_233209_epoch45.pkl
+   Threshold: 0.3015 | Youden J: 0.7647
+Timestamp: 20260413_004236 | Epoch 46/60 | Train Loss: 0.4721 | Train Acc: 0.7843 | Val Loss: 0.4194 | Val Acc: 0.8529 | Precision: 0.9286 | Recall: 0.7647 | F1: 0.8387 | AUC: 0.8858 | Best Thresh: 0.3208 | J: 0.7059
+Train Time: 82.53s | Val Time: 8.85s | Total: 91.38s
+Timestamp: 20260413_004408 | Epoch 47/60 | Train Loss: 0.4319 | Train Acc: 0.8137 | Val Loss: 0.3866 | Val Acc: 0.8529 | Precision: 0.8750 | Recall: 0.8235 | F1: 0.8485 | AUC: 0.9135 | Best Thresh: 0.4914 | J: 0.7059
+Train Time: 83.14s | Val Time: 8.86s | Total: 92.00s
+Timestamp: 20260413_004540 | Epoch 48/60 | Train Loss: 0.4165 | Train Acc: 0.8333 | Val Loss: 0.3869 | Val Acc: 0.8529 | Precision: 1.0000 | Recall: 0.7059 | F1: 0.8276 | AUC: 0.9031 | Best Thresh: 0.5129 | J: 0.7059
+Train Time: 82.74s | Val Time: 8.86s | Total: 91.60s
+Timestamp: 20260413_004711 | Epoch 49/60 | Train Loss: 0.4710 | Train Acc: 0.8333 | Val Loss: 0.4697 | Val Acc: 0.8529 | Precision: 0.9286 | Recall: 0.7647 | F1: 0.8387 | AUC: 0.9066 | Best Thresh: 0.3021 | J: 0.7059
+Train Time: 83.13s | Val Time: 8.75s | Total: 91.88s
+Timestamp: 20260413_004844 | Epoch 50/60 | Train Loss: 0.4469 | Train Acc: 0.8235 | Val Loss: 0.3846 | Val Acc: 0.8529 | Precision: 0.9286 | Recall: 0.7647 | F1: 0.8387 | AUC: 0.9239 | Best Thresh: 0.3786 | J: 0.7059
+Train Time: 84.15s | Val Time: 8.87s | Total: 93.02s
+Best LOSS model updated at epoch 50
+   Val Loss: 0.3846 | Threshold: 0.3786
+Best AUC model updated at epoch 50
+   Val AUC: 0.9239 | Threshold: 0.3786
+Timestamp: 20260413_005016 | Epoch 51/60 | Train Loss: 0.4439 | Train Acc: 0.7549 | Val Loss: 0.4172 | Val Acc: 0.8824 | Precision: 1.0000 | Recall: 0.7647 | F1: 0.8667 | AUC: 0.9273 | Best Thresh: 0.3452 | J: 0.7647
+Train Time: 82.42s | Val Time: 8.44s | Total: 90.87s
+Best AUC model updated at epoch 51
+   Val AUC: 0.9273 | Threshold: 0.3452
+Timestamp: 20260413_005146 | Epoch 52/60 | Train Loss: 0.4454 | Train Acc: 0.8039 | Val Loss: 0.4854 | Val Acc: 0.8824 | Precision: 1.0000 | Recall: 0.7647 | F1: 0.8667 | AUC: 0.9100 | Best Thresh: 0.2850 | J: 0.7647
+Train Time: 81.98s | Val Time: 8.44s | Total: 90.42s
+Timestamp: 20260413_005316 | Epoch 53/60 | Train Loss: 0.4792 | Train Acc: 0.8039 | Val Loss: 0.4461 | Val Acc: 0.8824 | Precision: 1.0000 | Recall: 0.7647 | F1: 0.8667 | AUC: 0.9273 | Best Thresh: 0.3262 | J: 0.7647
+Train Time: 81.65s | Val Time: 8.45s | Total: 90.09s
+Timestamp: 20260413_005447 | Epoch 54/60 | Train Loss: 0.4254 | Train Acc: 0.8431 | Val Loss: 0.4194 | Val Acc: 0.8529 | Precision: 1.0000 | Recall: 0.7059 | F1: 0.8276 | AUC: 0.9170 | Best Thresh: 0.3458 | J: 0.7059
+Train Time: 81.76s | Val Time: 8.44s | Total: 90.20s
+Timestamp: 20260413_005619 | Epoch 55/60 | Train Loss: 0.4097 | Train Acc: 0.8235 | Val Loss: 0.4683 | Val Acc: 0.8529 | Precision: 1.0000 | Recall: 0.7059 | F1: 0.8276 | AUC: 0.9031 | Best Thresh: 0.3195 | J: 0.7059
+Train Time: 83.45s | Val Time: 8.96s | Total: 92.41s
+Timestamp: 20260413_005751 | Epoch 56/60 | Train Loss: 0.4365 | Train Acc: 0.8137 | Val Loss: 0.4762 | Val Acc: 0.8824 | Precision: 1.0000 | Recall: 0.7647 | F1: 0.8667 | AUC: 0.9170 | Best Thresh: 0.3024 | J: 0.7647
+Train Time: 82.63s | Val Time: 8.95s | Total: 91.59s
+Timestamp: 20260413_005923 | Epoch 57/60 | Train Loss: 0.4567 | Train Acc: 0.8235 | Val Loss: 0.4447 | Val Acc: 0.8824 | Precision: 1.0000 | Recall: 0.7647 | F1: 0.8667 | AUC: 0.9066 | Best Thresh: 0.3146 | J: 0.7647
+Train Time: 83.07s | Val Time: 8.95s | Total: 92.01s
+Timestamp: 20260413_010054 | Epoch 58/60 | Train Loss: 0.4328 | Train Acc: 0.8137 | Val Loss: 0.4409 | Val Acc: 0.8529 | Precision: 1.0000 | Recall: 0.7059 | F1: 0.8276 | AUC: 0.9100 | Best Thresh: 0.3359 | J: 0.7059
+Train Time: 82.36s | Val Time: 8.94s | Total: 91.30s
+Timestamp: 20260413_010225 | Epoch 59/60 | Train Loss: 0.4156 | Train Acc: 0.8529 | Val Loss: 0.4714 | Val Acc: 0.8529 | Precision: 1.0000 | Recall: 0.7059 | F1: 0.8276 | AUC: 0.8858 | Best Thresh: 0.3234 | J: 0.7059
+Train Time: 82.66s | Val Time: 8.74s | Total: 91.40s
+Timestamp: 20260413_010357 | Epoch 60/60 | Train Loss: 0.4459 | Train Acc: 0.8235 | Val Loss: 0.4400 | Val Acc: 0.8824 | Precision: 1.0000 | Recall: 0.7647 | F1: 0.8667 | AUC: 0.9100 | Best Thresh: 0.3264 | J: 0.7647
+Train Time: 82.55s | Val Time: 8.83s | Total: 91.39s
+Scheduled checkpoint saved at epoch 60
+   Path: /workspace/models/late_opt_t1_flair_fp32_full_bs2_60_ckpt1_freezenone_20260412_233209_epoch60.pkl
+   Threshold: 0.3264 | Youden J: 0.7647
+Loss curves saved to /workspace/project/figures/loss_late_opt_t1_flair_fp32_full_bs2_60_ckpt1_freezenone_20260412_233209.png
+
+===== TRAIN EFFICIENCY =====
+Avg train time: 82.93 s
+Avg val time: 8.80 s
+Avg total epoch time: 91.73 s
+Avg data loading time: 0.0903 s
+Avg compute time: 1.5350 s
+Throughput: 1.11 samples/sec
+Peak GPU memory (train): 21.21 GB
+
+===== CHECKPOINT SUMMARY =====
+Initial save epoch: 1
+Best loss epoch: 50
+Best val loss: 0.3846
+Best loss threshold: 0.3786
+Best loss Youden J: 0.7059
+Loss saved epochs: [1, 2, 9, 12, 14, 16, 21, 22, 31, 37, 50]
+Best AUC epoch: 51
+Best val AUC: 0.9273
+Best AUC threshold: 0.3452
+Best AUC Youden J: 0.7647
+AUC saved epochs: [1, 2, 3, 31, 33, 34, 40, 50, 51]
+Requested scheduled epochs: [45, 60]
+Actual scheduled saved epochs: [45, 60]
+Scheduled thresholds: {45: 0.3015424609184265, 60: 0.3264048099517822}
+Scheduled Youden J: {45: 0.7647058823529411, 60: 0.7647058823529411}
+
+===== INFERENCE RESULTS =====
+Threshold used: 0.3452
+Accuracy: 0.7941
+Precision: 0.7778
+Recall: 0.8235
+F1 Score: 0.8000
+AUC: 0.8858
+TP: 14
+TN: 13
+FP: 4
+FN: 3
+===== INFERENCE EFFICIENCY =====
+Avg latency per sample: 0.1705 s
+Throughput: 5.86 samples/sec
+Peak GPU memory (inference): 10.88 GB
+ROC curve saved to /workspace/project/figures/eval_auc_late_opt_t1_flair_fp32_full_bs2_60_ckpt1_freezenone_20260412_233209.png
+
+===== INFERENCE RESULTS =====
+Threshold used: 0.3786
+Accuracy: 0.7647
+Precision: 0.7368
+Recall: 0.8235
+F1 Score: 0.7778
+AUC: 0.8754
+TP: 14
+TN: 12
+FP: 5
+FN: 3
+===== INFERENCE EFFICIENCY =====
+Avg latency per sample: 0.1705 s
+Throughput: 5.86 samples/sec
+Peak GPU memory (inference): 10.88 GB
+ROC curve saved to /workspace/project/figures/eval_loss_late_opt_t1_flair_fp32_full_bs2_60_ckpt1_freezenone_20260412_233209.png
+
+===== INFERENCE RESULTS =====
+Threshold used: 0.3015
+Accuracy: 0.7647
+Precision: 0.7368
+Recall: 0.8235
+F1 Score: 0.7778
+AUC: 0.8893
+TP: 14
+TN: 12
+FP: 5
+FN: 3
+===== INFERENCE EFFICIENCY =====
+Avg latency per sample: 0.1705 s
+Throughput: 5.86 samples/sec
+Peak GPU memory (inference): 10.88 GB
+ROC curve saved to /workspace/project/figures/eval_epoch45_late_opt_t1_flair_fp32_full_bs2_60_ckpt1_freezenone_20260412_233209.png
+
+===== INFERENCE RESULTS =====
+Threshold used: 0.3264
+Accuracy: 0.8235
+Precision: 0.8235
+Recall: 0.8235
+F1 Score: 0.8235
+AUC: 0.8824
+TP: 14
+TN: 14
+FP: 3
+FN: 3
+===== INFERENCE EFFICIENCY =====
+Avg latency per sample: 0.1706 s
+Throughput: 5.86 samples/sec
+Peak GPU memory (inference): 10.88 GB
+ROC curve saved to /workspace/project/figures/eval_epoch60_late_opt_t1_flair_fp32_full_bs2_60_ckpt1_freezenone_20260412_233209.png
+Saved JSON summary to /workspace/project/results/late_opt_t1_flair_fp32_full_bs2_60_ckpt1_freezenone_20260412_233209.json
+Experiment ended.
+
+------------------------------------------------------------
+EXIT STATUS: 0
+END: Mon Apr 13 01:04:42 EDT 2026
+============================================================
+
