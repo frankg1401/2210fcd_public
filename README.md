@@ -1,7 +1,7 @@
 # 2210fcd_public
 **Fusion Strategies and Performance–Efficiency Trade-offs in 3D Multi-Modal Brain MRI Classification for Focal Cortical Dysplasia**
 
-ABSTRACT
+**ABSTRACT**
 
 Focal cortical dysplasia (FCD) is a major cause of drug-resistant epilepsy, but MRI-based detection remains chal-
 lenging because lesions are often subtle. Multi-sequence three-dimensional MRI models can improve classification
@@ -23,7 +23,7 @@ runtime and memory cost. In the full-resolution FP32 setting, standard late fusi
 out-of-memory failure; a memory-optimized version restored feasibility but remained expensive. Overall, early fusion
 with AMP at full resolution provided the best practical operating point on a single L40S GPU.
 
-ACKNOWLEGEMENT AND NEW CONTRIBUTION
+**ACKNOWLEGEMENT AND NEW CONTRIBUTION**
 
 This work builds upon a baseline implementation developed by Daniel Rafique at the Intelligent Medical Informatics Computing Systems (IMICS) Lab at the Hospital for Sick Children and the University of Toronto, which includes MRI image pre-processing and a baseline early-fusion two-channel (T1 + FLAIR) 3D ResNet model. 
 
