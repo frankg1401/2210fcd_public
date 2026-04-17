@@ -1,7 +1,8 @@
 # 2210fcd_public
-Fusion Strategies and Performance–Efficiency Trade-offs in 3D Multi-Modal Brain MRI Classification for Focal Cortical Dysplasia
+**Fusion Strategies and Performance–Efficiency Trade-offs in 3D Multi-Modal Brain MRI Classification for Focal Cortical Dysplasia**
 
 ABSTRACT
+
 Focal cortical dysplasia (FCD) is a major cause of drug-resistant epilepsy, but MRI-based detection remains chal-
 lenging because lesions are often subtle. Multi-sequence three-dimensional MRI models can improve classification
 by combining complementary information from T1-weighted and FLAIR sequences, but this also increases compu-
